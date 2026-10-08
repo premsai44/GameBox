@@ -2,12 +2,11 @@
 #define MODELS_H
 #include <string>
 
-// Shared data structures used across the whole GameBox project
 struct GameRecord {
     std::string gameName;
     std::string playerName;
     int score;
-    std::string result; // e.g., "Win", "Loss", "Draw"
+    std::string result;
 };
 
 struct Player {

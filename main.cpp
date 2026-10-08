@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "main.h"
 #include "rps.h"
 #include "tictactoe.h"
@@ -7,8 +9,6 @@
 #include "scores.h"
 
 using namespace std;
-
-// Member 1 Responsibility: Main menu & integration
 
 void displayMenu() {
     cout << "\n========================================\n";
@@ -25,6 +25,7 @@ void displayMenu() {
 }
 
 int main() {
+    srand(time(0));
     int choice;
     string playerName;
 
@@ -36,7 +37,7 @@ int main() {
         if (!(cin >> choice)) {
             cin.clear();
             cin.ignore(10000, '\n');
-            choice = 0; // invalid input handler
+            choice = 0;
         }
 
         switch (choice) {
