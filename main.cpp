@@ -7,6 +7,7 @@
 #include "tictactoe.h"
 #include "numberguess.h"
 #include "hangman.h"
+#include "scramble.h"
 #include "scores.h"
 
 using namespace std;
@@ -20,9 +21,10 @@ void displayMenu() {
     cout << "2. Tic-Tac-Toe (XO)\n";
     cout << "3. Number Guessing Game\n";
     cout << "4. Hangman\n";
-    cout << "5. View Leaderboard\n";
-    cout << "6. View Game History\n";
-    cout << "7. Exit\n";
+    cout << "5. Word Scramble\n";
+    cout << "6. View Leaderboard\n";
+    cout << "7. View Game History\n";
+    cout << "8. Exit\n";
     cout << "\nEnter your choice: ";
 }
 
@@ -56,18 +58,21 @@ int main() {
                 playHangman(playerName);
                 break;
             case 5:
-                viewLeaderboard();
+                playScramble(playerName);
                 break;
             case 6:
-                viewGameHistory();
+                viewLeaderboard();
                 break;
             case 7:
+                viewGameHistory();
+                break;
+            case 8:
                 cout << "Thanks for playing GameBox, " << playerName << "!\n";
                 break;
             default:
                 cout << "Invalid choice. Please try again.\n";
         }
-    } while (choice != 7);
+    } while (choice != 8);
 
     return 0;
 }
